@@ -1,0 +1,27 @@
+{
+  "name": "conFusion",
+  "description": "Website for Awesome Continental Fusion Restaurant",
+  "main": "index.html",
+  "keywords": [
+    "Fusion",
+    "Restaurant",
+    "conFusion"
+  ],
+  "authors": [
+    "Yokesh E"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
