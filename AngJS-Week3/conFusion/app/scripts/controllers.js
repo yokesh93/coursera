@@ -71,25 +71,25 @@ angular.module('confusionApp')
         .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
 
             var dish= menuFactory.getDish(parseInt($stateParams.id,10));
-            
+            $scope.comments=dish.comments;
             $scope.dish = dish;
-            
         }])
 
         .controller('DishCommentController', ['$scope', function($scope) {
             
-            $scope.mycomment = {rating:5, comment:"", author:"", date:""};
+            $scope.newComment = {rating:"5", comment:"", author:"", date:""};
+            $scope.comments =angular.copy($scope.newComment);
             
             $scope.submitComment = function () {
                 
-                $scope.mycomment.date = new Date().toISOString();
-                console.log($scope.mycomment);
+                $scope.comments.date = new Date().toISOString();
+                console.log($scope.comments);
                 
-                $scope.dish.comments.push($scope.mycomment);
+                $scope.dish.comments.push($scope.comments);
                 
                 $scope.commentForm.$setPristine();
                 
-                $scope.mycomment = {rating:5, comment:"", author:"", date:""};
+                $scope.comments = angular.copy($scope.newComment);
             };
         }])
 
